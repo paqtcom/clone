@@ -8,7 +8,7 @@
 window.Clone = function($scope) {
     'use strict';
 
-    var version = '0.0.4';
+    var version = '0.0.5';
 
     var elements = {
         toggle:   '.js-clone-toggle',
