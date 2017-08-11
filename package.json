@@ -1,0 +1,25 @@
+{
+    "name": "way2web-clone",
+    "version": "0.0.3",
+    "description": "Clone an element.",
+    "files": [
+        "js/clone.core.js"
+    ],
+    "main": "js/clone.core.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Way2WebPieter/Clone.git"
+    },
+    "keywords": [
+        "bootstrap",
+        "tabs",
+        "javascript"
+    ],
+    "author": "Pieter Wigboldus",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/Way2WebPieter/Clone/issues"
+    },
+    "homepage": "https://github.com/Way2WebPieter/Clone#readme",
+    "dependencies": {}
+}
