@@ -8,7 +8,7 @@
     },
     "globals": {
         "Modernizr": false,
-        "W2Filter": false
+        "Clone": false
     },
     "rules": {
         "no-console": "warn",

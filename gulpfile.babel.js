@@ -53,6 +53,13 @@ import { modernizr } from './gulp/modernizr';
 export const taskConfig = {
     scripts: [
         new Task(
+             [
+                'jquery/dist/jquery.js',
+            ],
+            folders.npm,
+            dist.scripts + 'vendor.js'
+        ),
+        new Task(
             [
                 'clone.core.js'
             ],
