@@ -11,7 +11,7 @@
 window.Clone = function($scope, customElements, customClasses, customEvents) {
     'use strict';
 
-    var version = '0.0.9';
+    var version = '0.1.0';
 
     var elements = {
         toggle:      '.js-add-clone-button',
@@ -124,7 +124,7 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
      * When triggered, remove the target element.
      */
     function removeElement() {
-        $(this).parent(elements.removeClone).remove();
+        $(this).closest(elements.removeClone).remove();
 
         triggerEvent('remove', [$(this)]);
     }
