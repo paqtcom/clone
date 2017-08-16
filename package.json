@@ -1,6 +1,6 @@
 {
     "name": "way2web-clone",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "Clone an element.",
     "files": [
         "js/clone.core.js"
@@ -49,6 +49,6 @@
        "rev-del": "1.0.5"
    },
    "dependencies": {
-        "jquery": "3.2.1"
+        "jquery": ">=3.2.1"
     }
 }
