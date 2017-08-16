@@ -11,7 +11,7 @@
 window.Clone = function($scope, customElements, customClasses, customEvents) {
     'use strict';
 
-    var version = '0.0.8';
+    var version = '0.0.9';
 
     var elements = {
         toggle:      '.js-add-clone-button',
@@ -89,10 +89,10 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
       */
     function cloneElement() {
         var $target = $scope.find(elements.target);
-        var $counter = $scope.children(elements.counter);
+        var $counter = $scope.find(elements.counter);
         var $count = $counter.val();
 
-        var $template = $scope.children(elements.template);
+        var $template = $scope.find(elements.template);
         var $clone = $template
             .clone(true, true)
             .removeClass(classes.hidden)
@@ -107,11 +107,11 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
                 .replace(/\{key\+1\}/g, ++$count)
         );
 
-        if($counter) {
+        if($counter.length > 0) {
             $counter.val($count);
         }
 
-        if($target) {
+        if($target.length > 0) {
             $target.append($clone);
         } else {
             $clone.insertBefore($template);
