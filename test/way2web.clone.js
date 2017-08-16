@@ -1,4 +1,3 @@
-
 (function(Clones) {
     'use strict';
 
@@ -14,6 +13,6 @@
 
     // Attach to the clone function.
     Clones.find = function() {
-        new Clone($(this));
+        new Clone($(this)).init();
     };
 })(window.Way2web.Clones = window.Way2web.Clones || {});

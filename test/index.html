@@ -1,0 +1,22 @@
+<div class="js-clone">
+    <input class="js-clone-count" name="counter" type="hidden" value="1">
+    <form>
+        <div class="js-remove-target">
+            <button type="button" name="remove-target" class="js-clone-delete">
+                Delete
+            </button>
+            <input name="test[0][id]" type="hidden" value="1">
+        </div>
+
+        <div class="js-clone-target"></div>
+    </form>
+
+    <div class="is-hidden | js-remove-target js-clone-template">
+        <button type="button" name="remove-target" class="js-clone-delete">
+            Delete
+        </button>
+        <input name="test[{key}][id]" type="hidden" value="{key}">
+    </div>
+
+    <button class="btn btn--filled | js-add-clone-button">Add delivery address</button>
+</div>
