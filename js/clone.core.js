@@ -11,7 +11,7 @@
 window.Clone = function($scope, customElements, customClasses, customEvents) {
     'use strict';
 
-    var version = '0.1.0';
+    var version = '0.1.1';
 
     var elements = {
         toggle:      '.js-add-clone-button',
@@ -35,9 +35,9 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
      * @return {object}
      */
     function init() {
-        elements = $.extend(elements, customElements);
-        classes = $.extend(classes, customClasses);
-        events = $.extend(events, customEvents);
+        $.extend(elements, customElements);
+        $.extend(classes, customClasses);
+        $.extend(events, customEvents);
 
         $scope.find(elements.toggle).on('click', cloneElement);
         $scope.on('click', elements.remove, removeElement);
@@ -53,7 +53,7 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
      * @return {object}
      */
     function setElements(customElements) {
-        elements = $.extend(elements, customElements);
+        $.extend(elements, customElements);
 
         return this;
     }
@@ -66,7 +66,7 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
      * @return {object}
      */
     function setClasses(customClasses) {
-        elements = $.extend(elements, customClasses);
+        $.extend(elements, customClasses);
 
         return this;
     }
@@ -79,7 +79,7 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
      * @return {object}
      */
     function setEvents(customEvents) {
-        elements = $.extend(elements, customEvents);
+        $.extend(elements, customEvents);
 
         return this;
     }
