@@ -3,16 +3,25 @@
 
     // Object with the elements for the clones.
     Clones.elements = {
-        clone: '.js-clone'
+        clone1: '.js-clone1',
+        clone2: '.js-clone2'
     };
 
     // Search for the elements to clone.
     Clones.init = function() {
-        $(Clones.elements.clone).each(Clones.find);
+        $(Clones.elements.clone1).each(Clones.find1);
+        $(Clones.elements.clone2).each(Clones.find2);
     };
 
     // Attach to the clone function.
-    Clones.find = function() {
+    Clones.find1 = function() {
         new Clone($(this)).init();
     };
-})(window.Way2web.Clones = window.Way2web.Clones || {});
+
+    // Attach to the clone function.
+    Clones.find2 = function() {
+        new Clone($(this)).setCountOnRemove(true).init();
+    };
+
+    Clones.init();
+})(window.Clones = window.Clones || {});

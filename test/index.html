@@ -1,5 +1,9 @@
-<div class="js-clone">
-    <input class="js-clone-count" name="counter" type="hidden" value="1">
+<!doctype html>
+<title>way2web-clone</title>
+<link rel="stylesheet" href="main.css">
+
+<div class="js-clone1">
+    <input class="js-clone-count" name="counter" type="number" value="1">
     <form>
         <div class="js-remove-target">
             <button type="button" name="remove-target" class="js-clone-delete">
@@ -20,3 +24,30 @@
 
     <button class="btn btn--filled | js-add-clone-button">Add delivery address</button>
 </div>
+
+<div class="js-clone2">
+    <input class="js-clone-count" name="counter" type="number" value="1">
+    <form>
+        <div class="js-remove-target">
+            <button type="button" name="remove-target" class="js-clone-delete">
+                Delete
+            </button>
+            <input name="test[0][id]" type="hidden" value="1">
+        </div>
+
+        <div class="js-clone-target"></div>
+    </form>
+
+    <div class="is-hidden | js-remove-target js-clone-template">
+        <button type="button" name="remove-target" class="js-clone-delete">
+            Delete
+        </button>
+        <input name="test[{key}][id]" type="hidden" value="{key}">
+    </div>
+
+    <button class="btn btn--filled | js-add-clone-button">Add delivery address</button>
+</div>
+
+<script src="../dist/js/vendor.js"></script>
+<script src="../dist/js/app.js"></script>
+<script src="way2web.clone.js"></script>
