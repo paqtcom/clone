@@ -5,13 +5,14 @@
  * @param {object} customElements
  * @param {object} customClasses
  * @param {object} customEvents
+ * @param {boolean} customCountOnRemove
  *
  * @return {object}
  */
-window.Clone = function($scope, customElements, customClasses, customEvents) {
+window.Clone = function($scope, customElements, customClasses, customEvents, customCountOnRemove) {
     'use strict';
 
-    var version = '0.1.1';
+    var version = '0.1.2';
 
     var elements = {
         toggle:      '.js-add-clone-button',
@@ -27,6 +28,8 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
     };
 
     var events = {};
+
+    var countOnRemove = customCountOnRemove;
 
     /**
      * Get all parameters, and merge it with the default values.
@@ -84,6 +87,19 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
         return this;
     }
 
+    /**
+     * Set the count on remove.
+     *
+     * @param {boolean} customCountOnRemove
+     *
+     * @return {object}
+     */
+    function setCountOnRemove(customCountOnRemove) {
+        countOnRemove = customCountOnRemove;
+
+        return this;
+    }
+
      /**
       * Clone the element.
       */
@@ -124,7 +140,16 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
      * When triggered, remove the target element.
      */
     function removeElement() {
+        var $counter = $scope.find(elements.counter);
+        var $count = $counter.val();
+
         $(this).closest(elements.removeClone).remove();
+
+        if($(elements.removeClone + ':not(.' + classes.hidden + ')') && countOnRemove) {
+            $count = $($scope).find(elements.removeClone + ':not(.' + classes.hidden + ')').length;
+        }
+
+        $counter.val($count);
 
         triggerEvent('remove', [$(this)]);
     }
@@ -170,13 +195,14 @@ window.Clone = function($scope, customElements, customClasses, customEvents) {
     }
 
     return {
-        init:        init,
-        scope:       $scope,
-        clone:       cloneElement,
-        remove:      removeElement,
-        setElements: setElements,
-        setClasses:  setClasses,
-        setEvents:   setEvents,
-        version:     version
+        init:             init,
+        scope:            $scope,
+        clone:            cloneElement,
+        remove:           removeElement,
+        setElements:      setElements,
+        setClasses:       setClasses,
+        setEvents:        setEvents,
+        setCountOnRemove: setCountOnRemove,
+        version:          version
     };
 };
