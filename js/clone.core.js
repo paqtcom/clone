@@ -146,7 +146,7 @@ window.Clone = function($scope, customElements, customClasses, customEvents, cus
         $(this).closest(elements.removeClone).remove();
 
         if(getItems() && countOnRemove) {
-            $count = getItems().length;
+            $count = getItemCount();
         }
 
         $counter.val($count);
@@ -212,6 +212,15 @@ window.Clone = function($scope, customElements, customClasses, customEvents, cus
         return $scope.find(elements.template);
     }
 
+    /**
+     * Get the total of items.
+     *
+     * @return {integer}
+     */
+    function getItemCount() {
+        return getItems().length;
+    }
+
     return {
         init:             init,
         scope:            $scope,
@@ -223,6 +232,7 @@ window.Clone = function($scope, customElements, customClasses, customEvents, cus
         setCountOnRemove: setCountOnRemove,
         getItems:         getItems,
         getTemplate:      getTemplate,
+        getItemCount:     getItemCount,
         version:          version
     };
 };

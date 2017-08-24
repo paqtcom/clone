@@ -7,6 +7,11 @@
         clone2: '.js-clone2'
     };
 
+    Clones.items = {
+        clone1: [],
+        clone2: []
+    };
+
     // Search for the elements to clone.
     Clones.init = function() {
         $(Clones.elements.clone1).each(Clones.find1);
@@ -15,12 +20,16 @@
 
     // Attach to the clone function.
     Clones.find1 = function() {
-        new Clone($(this)).init();
+        Clones.items.clone1.push(
+            new Clone($(this)).init()
+        );
     };
 
     // Attach to the clone function.
     Clones.find2 = function() {
-        new Clone($(this)).setCountOnRemove(true).init();
+        Clones.items.clone2.push(
+            new Clone($(this)).setCountOnRemove(true).init()
+        );
     };
 
     Clones.init();
