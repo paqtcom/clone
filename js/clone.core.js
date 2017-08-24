@@ -12,7 +12,7 @@
 window.Clone = function($scope, customElements, customClasses, customEvents, customCountOnRemove) {
     'use strict';
 
-    var version = '0.1.2';
+    var version = '0.1.3';
 
     var elements = {
         toggle:      '.js-add-clone-button',
@@ -108,7 +108,7 @@ window.Clone = function($scope, customElements, customClasses, customEvents, cus
         var $counter = $scope.find(elements.counter);
         var $count = $counter.val();
 
-        var $template = $scope.find(elements.template);
+        var $template = getTemplate();
         var $clone = $template
             .clone(true, true)
             .removeClass(classes.hidden)
@@ -145,8 +145,8 @@ window.Clone = function($scope, customElements, customClasses, customEvents, cus
 
         $(this).closest(elements.removeClone).remove();
 
-        if($(elements.removeClone + ':not(.' + classes.hidden + ')') && countOnRemove) {
-            $count = $($scope).find(elements.removeClone + ':not(.' + classes.hidden + ')').length;
+        if(getItems() && countOnRemove) {
+            $count = getItemCount();
         }
 
         $counter.val($count);
@@ -194,6 +194,33 @@ window.Clone = function($scope, customElements, customClasses, customEvents, cus
         }
     }
 
+    /**
+     * Get all items.
+     *
+     * @return {object}
+     */
+    function getItems() {
+        return $($scope).find(elements.removeClone + ':not(.' + classes.hidden + ')');
+    }
+
+    /**
+     * Get the template.
+     *
+     * @return {object}
+     */
+    function getTemplate() {
+        return $scope.find(elements.template);
+    }
+
+    /**
+     * Get the total of items.
+     *
+     * @return {integer}
+     */
+    function getItemCount() {
+        return getItems().length;
+    }
+
     return {
         init:             init,
         scope:            $scope,
@@ -203,6 +230,9 @@ window.Clone = function($scope, customElements, customClasses, customEvents, cus
         setClasses:       setClasses,
         setEvents:        setEvents,
         setCountOnRemove: setCountOnRemove,
+        getItems:         getItems,
+        getTemplate:      getTemplate,
+        getItemCount:     getItemCount,
         version:          version
     };
 };

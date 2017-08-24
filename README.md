@@ -76,6 +76,115 @@ new Clone(element)
     .init();
 ```
 
+## functions
+
+### init
+
+Get all parameters, and merge it with the default values.
+Check the click events.
+
+`return {object}`
+
+### scope
+
+The element used for the clone.
+
+### clone
+
+Clone the element.
+This function is called if you click on the clone button.
+
+### remove
+
+When triggered, remove the target element.
+This function is called if you click on the remove button of an item.
+
+### setElements
+
+Overrule the default elements.
+
+`param {object} customElements`
+
+`return {object}`
+
+### setClasses
+
+Overrule the default classes.
+
+`@param {object} customClasses`
+
+`@return {object}`
+
+### setEvents
+
+Overrule the default events.
+
+`@param {object} customEvents`
+
+`@return {object}`
+
+### setCountOnRemove
+
+If true, the count will be the amount of items.
+The counter will change if you delete an item.
+By default the value is false, so it can be used as an unique id.
+
+`@param {boolean} customCountOnRemove`
+
+`@return {object}`
+
+### getItems
+
+Get all item elements.
+
+`return {object}`
+
+### getTemplate
+
+Get the template element.
+
+`@return {object}`
+
+### getItemCount
+
+Get the total of items.
+
+`@return {integer}`
+
+### version
+
+Get the version of the package.
+
+
+## NPM
+
+Install using npm:
+
+```
+$ npm install --save way2web-clone
+```
+
+
+## Test the package.
+
+To test the package, clone the package to your system.
+Than run this command.
+
+```
+npm run build
+```
+
+This will copy the test files to the dist, and also build the package files include the dependencies.
+
+When this script is complete without errors, you can open `dist/index.html` in your browser.
+Open the dev tools, tab console, and you see all the results of the tests.
+
+If you only want to check the eslint rules, just run.
+
+```
+npm run lint
+```
+
 [downloads-image]: https://img.shields.io/npm/dm/way2web-clone.svg
 [npm-url]: https://www.npmjs.com/package/way2web-clone
 [npm-image]: https://img.shields.io/npm/v/way2web-clone.svg
