@@ -12,7 +12,7 @@
 window.Clone = function($scope, customElements, customClasses, customEvents, customCountOnRemove) {
     'use strict';
 
-    var version = '0.1.3';
+    var version = '0.1.4';
 
     var elements = {
         toggle:      '.js-add-clone-button',
@@ -69,7 +69,7 @@ window.Clone = function($scope, customElements, customClasses, customEvents, cus
      * @return {object}
      */
     function setClasses(customClasses) {
-        $.extend(elements, customClasses);
+        $.extend(classes, customClasses);
 
         return this;
     }
@@ -82,7 +82,7 @@ window.Clone = function($scope, customElements, customClasses, customEvents, cus
      * @return {object}
      */
     function setEvents(customEvents) {
-        $.extend(elements, customEvents);
+        $.extend(events, customEvents);
 
         return this;
     }

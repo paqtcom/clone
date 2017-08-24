@@ -1,6 +1,6 @@
 {
     "name": "way2web-clone",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "Clone an element.",
     "files": [
         "js/clone.core.js"
@@ -11,7 +11,10 @@
         "url": "https://bitbucket.org/way2dev/clone"
     },
     "keywords": [
-        "javascript"
+        "javascript",
+        "clone",
+        "way2web",
+        "jQuery"
     ],
     "author": {
         "name": "Way2Web",
