@@ -12,7 +12,7 @@
 window.Clone = function($scope, customElements, customClasses, customEvents, customCountOnRemove) {
     'use strict';
 
-    var version = '0.1.4';
+    var version = '0.2.0';
 
     var elements = {
         toggle:      '.js-add-clone-button',

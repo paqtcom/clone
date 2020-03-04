@@ -1,7 +1,7 @@
 # Clone
 Clone an element.
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-stats]
 
 With this package you can clone elements on page.
 
@@ -185,6 +185,7 @@ If you only want to check the eslint rules, just run.
 npm run lint
 ```
 
-[downloads-image]: https://img.shields.io/npm/dm/way2web-clone.svg
+[downloads-image]: https://img.shields.io/npm/dt/way2web-clone.svg
 [npm-url]: https://www.npmjs.com/package/way2web-clone
 [npm-image]: https://img.shields.io/npm/v/way2web-clone.svg
+[npm-stats]: https://npm-stat.com/charts.html?package=way2web-clone
