@@ -1,6 +1,6 @@
 {
     "name": "way2web-clone",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Clone an element.",
     "files": [
         "js/clone.core.js"
@@ -23,7 +23,7 @@
     "license": "MIT",
     "homepage": "https://bitbucket.org/way2dev/clone#readme",
     "scripts": {
-        "build": "./bitbucket-pipelines/assets.sh",
+        "build": "node_modules/gulp/bin/gulp.js",
         "lint": "eslint js/*.js --config .eslintrc",
         "publish-to-npm": "./bitbucket-pipelines/npm.sh"
     },
@@ -33,7 +33,7 @@
         "babel-register": "6.22.0",
         "browser-sync": "2.18.7",
         "del": "2.2.2",
-        "gulp": "gulpjs/gulp#4.0",
+        "gulp": "^4.0",
         "gulp-autoprefixer": "3.1.1",
         "gulp-concat": "2.6.1",
         "gulp-data": "1.2.1",
