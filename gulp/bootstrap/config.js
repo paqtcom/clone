@@ -5,10 +5,8 @@ import * as utilities from './utilities';
  */
 let packageOptions = {
     uglify: {
-        options: {
-            compress: {
-                drop_console: true
-            }
+        compress: {
+            drop_console: true
         }
     },
     modernizr: {
