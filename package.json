@@ -8,7 +8,7 @@
     "main": "js/clone.core.js",
     "repository": {
         "type": "mercurial",
-        "url": "https://bitbucket.org/way2dev/clone"
+        "url": "https://github.com/Way2Web/clone"
     },
     "keywords": [
         "javascript",
@@ -21,7 +21,7 @@
         "url": "https://www.way2web.nl/"
     },
     "license": "MIT",
-    "homepage": "https://bitbucket.org/way2dev/clone#readme",
+    "homepage": "https://github.com/Way2Web/clone#readme",
     "scripts": {
         "build": "node_modules/gulp/bin/gulp.js",
         "lint": "eslint js/*.js --config .eslintrc",
