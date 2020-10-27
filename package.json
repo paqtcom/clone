@@ -3,12 +3,22 @@
     "version": "1.0.0",
     "description": "Clone an element.",
     "files": [
-        "js/clone.core.js"
+        "dist/clone.js",
+        "dist/clone.js.map",
+        "dist/clone.modern.js",
+        "dist/clone.modern.js.map",
+        "dist/clone.module.js",
+        "dist/clone.module.js.map",
+        "dist/clone.umd.js",
+        "dist/clone.umd.js.map"
     ],
-    "main": "js/clone.core.js",
+    "source": "js/clone.core.js",
+    "main": "dist/clone.js",
+    "module": "dist/clone.module.js",
+    "unpkg": "dist/clone.umd.js",
     "repository": {
         "type": "mercurial",
-        "url": "https://github.com/Way2Web/clone"
+        "url": "https://github.com/Way2Web/clone.git"
     },
     "keywords": [
         "javascript",
@@ -21,37 +31,23 @@
         "url": "https://www.way2web.nl/"
     },
     "license": "MIT",
-    "homepage": "https://github.com/Way2Web/clone#readme",
+    "homepage": "https://github.com/Way2Web/clone.git#readme",
     "scripts": {
-        "build": "node_modules/gulp/bin/gulp.js",
-        "lint": "eslint js/*.js --config .eslintrc",
-        "publish-to-npm": "./bitbucket-pipelines/npm.sh"
+        "build": "node test/test.js && microbundle",
+        "dev": "microbundle watch",
+        "lint": "eslint js/*.js --config .eslintrc"
     },
     "devDependencies": {
-        "autoprefixer": "6.7.2",
-        "babel-preset-es2015": "6.22.0",
-        "babel-register": "6.22.0",
-        "browser-sync": "2.18.7",
-        "del": "2.2.2",
-        "gulp": "^4.0",
-        "gulp-autoprefixer": "3.1.1",
-        "gulp-concat": "2.6.1",
-        "gulp-data": "1.2.1",
-        "gulp-eslint": "3.0.1",
-        "gulp-modernizr": "1.0.0-alpha",
-        "gulp-rev": "7.1.2",
-        "gulp-sass": "3.1.0",
-        "gulp-sourcemaps": "2.4.1",
-        "gulp-stylelint": "3.7.0",
-        "gulp-uglify": "2.0.1",
-        "merge-stream": "1.0.1",
-        "node-notifier": "5.1.2",
-        "parse-filepath": "1.0.1",
-        "postcss-reporter": "1.3.3",
-        "postcss-urlrewrite": "0.2.1",
-        "rev-del": "1.0.5"
+        "babel-preset-env": "^1.7.0",
+        "babel-register": "6.26.0",
+        "eslint": "^7.12.1",
+        "eslint-config-prettier": "^6.14.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "fs-extra": "^9.0.1",
+        "microbundle": "^0.12.4",
+        "prettier": "^2.1.2"
     },
     "dependencies": {
-        "jquery": ">=3.2.1"
+        "jquery": ">=3.5.1"
     }
 }

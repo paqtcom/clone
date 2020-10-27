@@ -176,7 +176,7 @@ npm run build
 
 This will copy the test files to the dist, and also build the package files include the dependencies.
 
-When this script is complete without errors, you can open `dist/index.html` in your browser.
+When this script is complete without errors, you can open `dist/test/index.html` in your browser.
 Open the dev tools, tab console, and you see all the results of the tests.
 
 If you only want to check the eslint rules, just run.
