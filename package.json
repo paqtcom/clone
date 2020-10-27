@@ -32,6 +32,9 @@
     },
     "license": "MIT",
     "homepage": "https://github.com/Way2Web/clone.git#readme",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/" 
+    },
     "scripts": {
         "build": "node test/test.js && microbundle",
         "dev": "microbundle watch",
