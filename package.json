@@ -3,12 +3,22 @@
     "version": "1.0.0",
     "description": "Clone an element.",
     "files": [
-        "js/clone.core.js"
+        "dist/clone.js",
+        "dist/clone.js.map",
+        "dist/clone.modern.js",
+        "dist/clone.modern.js.map",
+        "dist/clone.module.js",
+        "dist/clone.module.js.map",
+        "dist/clone.umd.js",
+        "dist/clone.umd.js.map"
     ],
-    "main": "js/clone.core.js",
+    "source": "js/clone.core.js",
+    "main": "dist/clone.js",
+    "module": "dist/clone.module.js",
+    "unpkg": "dist/clone.umd.js",
     "repository": {
         "type": "mercurial",
-        "url": "https://github.com/Way2Web/clone"
+        "url": "https://github.com/Way2Web/clone.git"
     },
     "keywords": [
         "javascript",
@@ -21,38 +31,21 @@
         "url": "https://www.way2web.nl/"
     },
     "license": "MIT",
-    "homepage": "https://github.com/Way2Web/clone#readme",
+    "homepage": "https://github.com/Way2Web/clone.git#readme",
     "scripts": {
-        "build": "node_modules/gulp/bin/gulp.js",
-        "lint": "eslint js/*.js --config .eslintrc",
-        "publish-to-npm": "./bitbucket-pipelines/npm.sh"
+        "build": "node test/test.js && microbundle",
+        "dev": "microbundle watch",
+        "lint": "eslint js/*.js --config .eslintrc"
     },
     "devDependencies": {
-        "autoprefixer": "10.0.1",
         "babel-preset-env": "^1.7.0",
         "babel-register": "6.26.0",
-        "browser-sync": "^2.26.13",
-        "del": "6.0.0",
-        "gulp": "^4.0",
-        "gulp-autoprefixer": "7.0.1",
-        "gulp-concat": "2.6.1",
-        "gulp-data": "1.3.1",
-        "gulp-eslint": "6.0.0",
-        "gulp-modernizr": "^4.0.1",
-        "gulp-rev": "9.0.0",
-        "gulp-sass": "4.1.0",
-        "gulp-sourcemaps": "2.6.5",
-        "gulp-stylelint": "^13.0.0",
-        "gulp-uglify": "3.0.2",
-        "gulp-util": "^3.0.8",
-        "merge-stream": "2.0.0",
-        "node-notifier": "8.0.0",
-        "parse-filepath": "1.0.2",
-        "postcss": "^8.1.4",
-        "postcss-reporter": "7.0.1",
-        "postcss-urlrewrite": "0.2.2",
-        "rev-del": "^2.0.0",
-        "stylelint": "^13.7.2"
+        "eslint": "^7.12.1",
+        "eslint-config-prettier": "^6.14.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "fs-extra": "^9.0.1",
+        "microbundle": "^0.12.4",
+        "prettier": "^2.1.2"
     },
     "dependencies": {
         "jquery": ">=3.5.1"
