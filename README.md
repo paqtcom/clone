@@ -3,6 +3,9 @@ Clone an element.
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-stats]
 
+> **⚠ WARNING: No maintenance intended**  
+> This package is not actively maintained.
+
 With this package you can clone elements on page.
 
 Add this to your javascript file:
